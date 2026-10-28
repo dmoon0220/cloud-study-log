@@ -1,0 +1,6 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/cloud_study_log
+spring.datasource.username=app
+spring.datasource.password=change_me_password
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
