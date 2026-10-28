@@ -1,0 +1,31 @@
+name: Cloud Study Log CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 소스 코드 가져오기
+        uses: actions/checkout@v7
+
+      - name: Java 21 설정
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Gradle 설정
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: 테스트 실행
+        run: ./gradlew test
