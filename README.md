@@ -76,3 +76,10 @@ Spring Boot 웹 개발, 데이터베이스 연결, Docker를 이용한 실행 �
 - 실제 비밀번호가 들어 있는 `.env` 파일은 GitHub에 올리지 않습니다.
 - 실제 `application.properties` 파일도 GitHub에 올리지 않습니다.
 - `.env.example`과 `application.properties.example`은 설정 방법을 공유하기 위한 예시 파일입니다.
+## 자동 테스트 (CI)
+
+GitHub Actions를 사용해 코드 변경 사항을 자동으로 검사합니다.
+
+- `main` 브랜치로 Pull Request를 만들면 테스트가 실행됩니다.
+- 테스트 명령어: `./gradlew test`
+- 테스트가 실패하면 원인을 수정한 뒤 다시 검사합니다.
